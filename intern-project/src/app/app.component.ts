@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { ZealMenuComponent } from './zeal-menu/zeal-menu.component';
+
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     RouterLink,
     RouterLinkActive,
     NavbarComponent,
+    ZealMenuComponent,
     FormsModule,
   ],
   templateUrl: './app.component.html',

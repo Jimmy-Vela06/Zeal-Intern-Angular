@@ -1,6 +1,18 @@
-nav {
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' id='svg' viewBox='0 0 1440 165' xmlns='http://www.w3.org/2000/svg' class='transition duration-300 ease-in-out delay-150'%3E%3Cpath d='M 0,400 L 0,150 C 49.15537555228278,185.53332106038292 98.31075110456555,221.06664212076583 165,220 C 231.68924889543445,218.93335787923417 315.9123711340206,181.26675257731958 370,154 C 424.0876288659794,126.73324742268042 448.0397643593519,109.86634756995583 510,115 C 571.9602356406481,120.13365243004417 671.9285714285714,147.26785714285714 736,156 C 800.0714285714286,164.73214285714286 828.2459499263624,155.06222385861562 881,167 C 933.7540500736376,178.93777614138438 1011.0876288659795,212.48324742268042 1075,207 C 1138.9123711340205,201.51675257731958 1189.40353460972,157.00478645066272 1248,141 C 1306.59646539028,124.99521354933727 1373.29823269514,137.49760677466864 1440,150 L 1440,400 L 0,400 Z' stroke='none' stroke-width='0' fill='%237286a0' fill-opacity='1' class='transition-all duration-300 ease-in-out delay-150 path-0'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover;
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/navbackground.svg");
+  background-size: cover; /* or any other specific size */
+  background-position: center center; /* Center the background */
+  background-repeat: no-repeat; /* Prevent background from repeating */
+}
+
+.spin-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.spin-on-hover:hover {
+  transform: scale(0.9) rotate(360deg);
+  transition: transform 4s;
 }
