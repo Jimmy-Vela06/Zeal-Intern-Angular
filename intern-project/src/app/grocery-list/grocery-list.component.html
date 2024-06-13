@@ -1,1 +1,37 @@
-<p>grocery-list works!</p>
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Grocery List</h2>
+
+  <div class="mb-4">
+    <input
+      type="text"
+      placeholder="Item name"
+      [(ngModel)]="newItemName"
+      class="border border-gray-300 p-2 rounded mr-2"
+    />
+    <input
+      type="number"
+      min="1"
+      placeholder="Quantity"
+      [(ngModel)]="newItemQuantity"
+      class="border border-gray-300 p-2 rounded mr-2"
+    />
+    <button (click)="addItem()" class="btn">Add Item</button>
+  </div>
+
+  <ul class="list-disc pl-5">
+    <li
+      *ngFor="let item of groceryList; let i = index"
+      [ngClass]="{ 'line-through text-gray-500': item.checked }"
+      class="flex items-center mb-2"
+    >
+      <input
+        type="checkbox"
+        [(ngModel)]="item.checked"
+        (change)="toggleItemChecked(i)"
+        class="mr-2"
+      />
+      <span class="flex-1"> {{ item.name }} ({{ item.quantity }}) </span>
+      <button (click)="removeItem(i)" class="btn ml-2">Remove</button>
+    </li>
+  </ul>
+</div>
