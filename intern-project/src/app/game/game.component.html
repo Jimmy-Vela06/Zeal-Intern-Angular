@@ -1,1 +1,22 @@
-<p>game works!</p>
+<div class="flex flex-col items-center p-4 bg-gray-100 min-h-screen">
+  <h2 class="text-2xl font-bold mb-4">Rock Paper Scissors</h2>
+  <div class="choices flex space-x-4 mb-4">
+    <button (click)="playGame('Rock')" class="btn">Rock</button>
+    <button (click)="playGame('Paper')" class="btn">Paper</button>
+    <button (click)="playGame('Scissors')" class="btn">Scissors</button>
+  </div>
+
+  <div *ngIf="gameOver" class="result text-center">
+    <p>
+      You chose: <span class="font-bold">{{ userChoice }}</span>
+    </p>
+    <p>
+      Bot chose: <span class="font-bold">{{ botChoice }}</span>
+    </p>
+    <p class="text-red-500 mt-2">{{ chatBotMessage }}</p>
+  </div>
+
+  <button *ngIf="gameOver" (click)="resetGame()" class="btn mt-4">
+    Play Again
+  </button>
+</div>
