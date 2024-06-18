@@ -11,18 +11,33 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './tip-calculator.component.css',
 })
 export class TipCalculatorComponent {
-  // tipPercentage: number = 0;
+  public bill: number = 0;
+  public customTip: number = 0;
+  public numberOfPeople: number = 1;
+  public tipPercentage: number = 0;
+
   showEmoji: boolean = false;
 
-  billAmount: number = 0;
-  tipPercentage: number = 12;
-
-  setTipPercentage(percentage: number) {
-    this.tipPercentage = percentage;
+  get tipAmount(): number {
+    return (this.bill * this.tipPercentage) / 100 / this.numberOfPeople;
   }
 
-  calculateTipAmount(): number {
-    return (this.billAmount * this.tipPercentage) / 100;
+  get totalAmount(): number {
+    return (
+      (this.bill + (this.bill * this.tipPercentage) / 100) / this.numberOfPeople
+    );
+  }
+
+  setTip(percentage: number): void {
+    this.tipPercentage = percentage;
+    this.customTip = 0;
+  }
+
+  reset(): void {
+    this.bill = 0;
+    this.customTip = 0;
+    this.numberOfPeople = 1;
+    this.tipPercentage = 0;
   }
 
   checkTipPercentage() {
@@ -34,9 +49,5 @@ export class TipCalculatorComponent {
         this.showEmoji = false;
       }, 2000);
     }
-  }
-
-  calculateTotalAmount(): number {
-    return this.billAmount + this.calculateTipAmount();
   }
 }

@@ -6,6 +6,9 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ZealMenuComponent } from './zeal-menu/zeal-menu.component';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -19,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ZealMenuComponent,
     FormsModule,
+    // BrowserModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
