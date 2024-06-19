@@ -6,6 +6,8 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ZealMenuComponent } from './zeal-menu/zeal-menu.component';
 
+import { ThreeJsComponent } from './three-js/three-js.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
@@ -21,11 +23,12 @@ import { FormsModule } from '@angular/forms';
     RouterLinkActive,
     NavbarComponent,
     ZealMenuComponent,
+    ThreeJsComponent,
     FormsModule,
     // BrowserModule,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'intern-project';
